@@ -5,6 +5,11 @@ import { InitDataPage } from '@/pages/InitDataPage.tsx';
 import { LaunchParamsPage } from '@/pages/LaunchParamsPage.tsx';
 import { ThemeParamsPage } from '@/pages/ThemeParamsPage.tsx';
 import { TONConnectPage } from '@/pages/TONConnectPage/TONConnectPage';
+import { Home } from '@/pages/Home';
+import { Leaderboard } from '@/pages/Leaderboard';
+import { Trade } from '@/pages/Trade';
+import { TradeDetail } from '@/pages/TradeDetail';
+import { Me } from '@/pages/Me';
 
 interface Route {
   path: string;
@@ -41,4 +46,9 @@ export const routes: Route[] = [
       </svg>
     ),
   },
+  { path: '/main', Component: Home, title: 'Homepage' },
+  { path: '/trade', Component: Trade, title: 'Trade' },
+  { path: '/trade/:symbol', Component: TradeDetail, title: 'Symbol Info' },
+  { path: '/leaderboard', Component: Leaderboard, title: 'Leaderboard' },
+  { path: '/me', Component: Me, title: 'Profile page' },
 ];
