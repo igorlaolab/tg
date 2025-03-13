@@ -59,7 +59,7 @@ export const Home: React.FC = () => {
     <Page>
     <Box sx={{ position: 'relative' }}>
       <Box sx={{ p: 2 }}>
-        <Box sx={{ px: 3 }}>
+        <Box sx={{ px: 2 }}>
           <UserProfileCard
             avatarUrl={avatarUrl}
             stats={{

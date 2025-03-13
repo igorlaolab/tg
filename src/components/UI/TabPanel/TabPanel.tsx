@@ -30,7 +30,7 @@ const TabPanel: React.FC<TabPanelProps> = ({
 }) => {
     return (
         <Box>
-            <Box sx={{px: 3}}>
+            <Box sx={{px: 2}}>
               <TabsContainer>
                 <Segmented
                   segments={tabs}

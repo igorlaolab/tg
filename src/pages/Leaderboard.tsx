@@ -192,8 +192,7 @@ export const Leaderboard: React.FC = () => {
           </Typography>
         </SeasonBadge>
       </Box>
-
-      <Box sx={{ px: 2.5, mt: 2 }}>
+      <Box sx={{ px: 3.5, mt: 2 }}>
         <Segmented segments={[
           {
             label: 'Top Traders',
