@@ -68,8 +68,8 @@ const TradeButton = styled(Button)({
   right: 0,
   margin: 'auto',
   maxWidth: '600px',
-  backgroundColor: '#28B550',
-  borderColor: '#28B550',
+  backgroundColor: '#28B550 !important',
+  borderColor: '#28B550 !important',
   width: 'calc(100% - 30px) !important',
 });
 
@@ -142,7 +142,7 @@ export const TradeDetail: React.FC = () => {
           <PositionsBlock positions={positions} />
         </Box>
 
-        <TradeButton fullWidth variant="success">
+        <TradeButton fullWidth>
           Trade
         </TradeButton>
       </Box>
