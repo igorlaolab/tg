@@ -1,8 +1,7 @@
 import {
   mockTelegramEnv,
   isTMA,
-  parseInitData,
-  LaunchParams, retrieveLaunchParams
+  retrieveLaunchParams
 } from '@telegram-apps/sdk-react';
 
 // It is important, to mock the environment only for development purposes.
@@ -18,7 +17,7 @@ if (import.meta.env.DEV) {
     // Determine which launch params should be applied. We could already
     // apply them previously, or they may be specified on purpose using the
     // default launch parameters transmission method.
-    let lp: LaunchParams | undefined;
+    let lp: any | undefined;
     try {
       lp = retrieveLaunchParams();
     } catch (e) {
@@ -56,7 +55,7 @@ if (import.meta.env.DEV) {
           subtitleTextColor: '#708499',
           textColor: '#f5f5f5',
         },
-        initData: parseInitData(initDataRaw),
+        // В версии 3 SDK нет parseInitData, поэтому мы просто сохраняем сырые данные
         initDataRaw,
         version: '8',
         platform: 'tdesktop',
