@@ -24,7 +24,13 @@ export const theme = createTheme({
     MuiBottomNavigation: {
       styleOverrides: {
         root: {
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          zIndex: 1000,
           borderTop: 'none !important',
+          backgroundColor: '#1A1D1F',
           '&.MuiPaper-root': {
             borderTop: 'none'
           },
