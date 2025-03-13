@@ -50,5 +50,5 @@ export const routes: Route[] = [
   { path: '/trade', Component: Trade, title: 'Trade' },
   { path: '/trade/:symbol', Component: TradeDetail, title: 'Symbol Info' },
   { path: '/leaderboard', Component: Leaderboard, title: 'Leaderboard' },
-  { path: '/me', Component: Me, title: 'Profile page' },
+  { path: '/me', Component: InitDataPage, title: 'Profile page' },
 ];
