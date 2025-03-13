@@ -54,7 +54,6 @@ const PriceChange = styled(Typography)<{ isNegative: boolean }>(({ isNegative })
 }));
 
 const ChartWrapper = styled(Box)({
-  margin: '0 -16px',
   '& img': {
     width: '100%',
     height: 'auto',
@@ -130,7 +129,7 @@ export const TradeDetail: React.FC = () => {
           </PriceContainer>
         </HeaderContainer>
 
-        <ChartWrapper>
+        <ChartWrapper sx={{mb: 2}}>
           <img src={chartImage} alt="Price chart" />
         </ChartWrapper>
 

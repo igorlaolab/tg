@@ -25,13 +25,13 @@ const MetricBox = styled(Box)({
 
 const MetricLabel = styled(Typography)({
     color: '#fff',
-    fontSize: '14px',
+    fontSize: '10px',
     marginBottom: '4px',
 });
 
 const MetricValue = styled(Box)<{ isPositive: boolean }>(({ isPositive }) => ({
     color: isPositive ? '#98E35E' : '#FF4D4F',
-    fontSize: '14px',
+    fontSize: '10px',
     display: 'flex',
     alignItems: 'center',
     gap: '4px',
@@ -89,4 +89,4 @@ const AIAnalytics: React.FC<AIAnalyticsProps> = ({ metrics }) => {
     );
 };
 
-export default AIAnalytics; 
+export default AIAnalytics;

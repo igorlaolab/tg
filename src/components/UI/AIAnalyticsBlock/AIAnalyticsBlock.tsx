@@ -4,7 +4,7 @@ import AIAnalytics from '@/components/UI/AIAnalytics/AIAnalytics';
 
 const ShowMore = styled(Typography)({
     color: '#98E35E',
-    fontSize: '14px',
+    fontSize: '12px',
     textAlign: 'right',
     cursor: 'pointer',
 });
@@ -23,7 +23,7 @@ const AIAnalyticsBlock: React.FC<AIAnalyticsBlockProps> = ({ metrics }) => {
     return (
         <>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1 }}>
-                <Typography variant="h2">AI Analytics</Typography>
+                <Typography variant="subtitle1">AI Analytics</Typography>
                 <ShowMore>Show more</ShowMore>
             </Box>
             <AIAnalytics metrics={metrics} />

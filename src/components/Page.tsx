@@ -34,10 +34,9 @@ export function Page({ children, back = true }: PropsWithChildren<{
     backButton.hide();
   }, [back]);
 
-  return <>
+  return(
     <Box sx={{paddingBottom: '56px'}}>
       {children}
-    </Box>
     <Paper elevation={3} sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 1000 }}>
       <StyledBottomNav
         value={location.pathname}
@@ -65,5 +64,5 @@ export function Page({ children, back = true }: PropsWithChildren<{
         />
       </StyledBottomNav>
     </Paper>
-  </>;
+    </Box>);
 }

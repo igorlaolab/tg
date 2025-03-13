@@ -85,8 +85,8 @@ const PositionsBlock: React.FC<PositionsBlockProps> = ({ positions }) => {
     return (
         <>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1 }}>
-                <Typography variant="h2">Your Positions</Typography>
-                <Typography variant="h2" sx={{ width: '60px', textAlign: 'center' }}>PnL</Typography>
+                <Typography variant="subtitle1">Your Positions</Typography>
+                <Typography variant="subtitle1" sx={{ width: '60px', textAlign: 'center' }}>PnL</Typography>
             </Box>
 
             {positions.length > 0 ? (
@@ -122,4 +122,4 @@ const PositionsBlock: React.FC<PositionsBlockProps> = ({ positions }) => {
     );
 };
 
-export default PositionsBlock; 
+export default PositionsBlock;
