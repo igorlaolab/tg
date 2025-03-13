@@ -166,7 +166,7 @@ export const Leaderboard: React.FC = () => {
   }, [activeTab]);
 
   return (
-    <Page>
+    <Page back={false}>
     <Box sx={{ p: 2 }}>
       {/* Блок баланса и сезона */}
       <Box sx={{

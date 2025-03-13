@@ -103,7 +103,7 @@ export const Trade: React.FC = () => {
   ];
 
   return (
-    <Page>
+    <Page back={false}>
     <Box sx={{ p: 2, pb: '60px' }}>
       {/* Заголовки */}
       <HeaderRow>

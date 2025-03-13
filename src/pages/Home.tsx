@@ -56,7 +56,7 @@ export const Home: React.FC = () => {
   ];
 
   return (
-    <Page>
+    <Page back={false}>
     <Box sx={{ position: 'relative' }}>
       <Box sx={{ p: 2 }}>
         <Box sx={{ px: 2 }}>

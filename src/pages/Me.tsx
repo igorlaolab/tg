@@ -150,7 +150,7 @@ export const Me: React.FC = () => {
   ];
 
   return (
-    <Page>
+    <Page back={false}>
     <Box sx={{ p: 2, pb: '60px' }}>
       <Box sx={{ px: 2 }}>
       {/* Профиль пользователя */}
