@@ -11,10 +11,14 @@ export function App() {
 
   useEffect(() => {
     if (
+    // @ts-expect-error qwert
       window.Telegram &&
+      // @ts-expect-error qwert
       window.Telegram.WebApp &&
+      // @ts-expect-error qwert
       typeof window.Telegram.WebApp.setupSwipeBehavior === 'function'
     ) {
+      // @ts-expect-error qwert
       window.Telegram.WebApp.setupSwipeBehavior({ swipe_enabled: false });
     }
   }, []);
