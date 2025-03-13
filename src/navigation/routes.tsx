@@ -9,7 +9,7 @@ import { Home } from '@/pages/Home';
 import { Leaderboard } from '@/pages/Leaderboard';
 import { Trade } from '@/pages/Trade';
 import { TradeDetail } from '@/pages/TradeDetail';
-import { Me } from '@/pages/Me';
+// import { Me } from '@/pages/Me';
 
 interface Route {
   path: string;

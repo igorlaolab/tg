@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { backButton } from '@telegram-apps/sdk-react';
 import { PropsWithChildren, useEffect } from 'react';
-import {Paper, BottomNavigationAction, BottomNavigation, styled, Box} from "@mui/material";
+import {BottomNavigationAction, BottomNavigation, styled, Box} from "@mui/material";
 import { BiHomeAlt2 } from "react-icons/bi";
 import { TbCoinBitcoin, TbUserBitcoin } from "react-icons/tb";
 import { LuRocket } from "react-icons/lu";
