@@ -77,7 +77,7 @@ export const OrderCreate: React.FC = () => {
 
   return (
     <Page>
-      <Stack justifyContent="space-between" sx={{ backgroundColor: 'red', flex: 1 }}>
+      <Stack justifyContent="space-between" sx={{ flex: 1 }}>
         <ContentContainer sx={{ mt: 3 }}>
           <Segmented
             segments={[
