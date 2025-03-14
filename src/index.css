@@ -37,7 +37,7 @@ button {
 
 .scrollable-element {
   overflow-y: scroll;
-  height: 32rem;
+  height: calc(100vh - 56px);
   font-size: 6.25rem;
   border: 1px solid;
 }
