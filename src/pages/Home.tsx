@@ -6,6 +6,7 @@ import { FaArrowTrendUp, FaArrowTrendDown } from "react-icons/fa6";
 import PositionsBlock from '@/components/UI/PositionsBlock/PositionsBlock';
 import { Page } from '@/components/Page';
 import UserProfileCard from "@/components/UI/UserProfileCard/UserProfileCard.tsx";
+import { useUserPhoto } from '@/hooks/useUserPhoto';
 
 const NewsItem = styled(Paper)(({ theme }) => ({
   display: 'grid',
@@ -34,7 +35,7 @@ const AiRateBox = styled(Box)<{ isBearish: boolean }>(({ isBearish }) => ({
 }));
 
 export const Home: React.FC = () => {
-  const avatarUrl = `https://api.dicebear.com/7.x/avataaars/svg?seed=${Math.random()}`;
+  const avatarUrl = useUserPhoto();
 
   const positions = [
     {
@@ -57,7 +58,7 @@ export const Home: React.FC = () => {
 
   return (
     <Page back={false}>
-    <Box sx={{ position: 'relative' }}>
+      <Box sx={{ position: 'relative' }}>
         <Box sx={{ px: 1.5 }}>
           <UserProfileCard
             avatarUrl={avatarUrl}
@@ -163,7 +164,7 @@ export const Home: React.FC = () => {
             }}
           />
         </Box>
-    </Box>
+      </Box>
     </Page>
   );
 };

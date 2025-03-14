@@ -6,6 +6,7 @@ import TabPanel from '@/components/UI/TabPanel/TabPanel';
 import Button from '@/components/UI/Button/Button'
 import { Page } from '@/components/Page';
 import PositionsBlock from "@/components/UI/PositionsBlock/PositionsBlock.tsx";
+import { useUserPhoto } from '@/hooks/useUserPhoto';
 
 const ButtonsContainer = styled(Box)(({ theme }) => ({
   display: 'flex',
@@ -43,8 +44,8 @@ const TermsLink = styled('a')({
 export const Me: React.FC = () => {
   const [activeTab, setActiveTab] = useState('friends');
 
-  // Генерация случайного аватара
-  const avatarUrl = `https://api.dicebear.com/7.x/avataaars/svg?seed=${Math.random()}`;
+  // Используем хук вместо генерации случайного аватара
+  const avatarUrl = useUserPhoto();
 
   // Моковые данные друзей
   const friends = [
@@ -155,7 +156,7 @@ export const Me: React.FC = () => {
           onChange={setActiveTab}
         >
           {activeTab === 'positions' ? (
-              <PositionsBlock positions={positions} />
+            <PositionsBlock positions={positions} />
           ) : (
             <FriendListCard friends={friends} />
           )}

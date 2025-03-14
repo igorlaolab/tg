@@ -1,7 +1,7 @@
 import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Box, Typography, styled, Avatar, Divider } from '@mui/material';
-import { FaArrowLeft, FaArrowUp, FaArrowDown } from 'react-icons/fa';
+import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
 import { Page } from '@/components/Page';
 
 const AdviceCard = styled(Box)({
