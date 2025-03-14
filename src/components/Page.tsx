@@ -35,7 +35,7 @@ export function Page({ children, back = true }: PropsWithChildren<{
   }, [back]);
 
   return(
-    <Box sx={{paddingBottom: '56px'}} className="scrollable-element">
+    <Box sx={{paddingBottom: '56px'}}>
       {children}
       <StyledBottomNav
         value={location.pathname}

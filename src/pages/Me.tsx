@@ -58,6 +58,10 @@ const TermsContainer = styled(Box)({
   backgroundColor: 'rgba(12, 24, 42, 0.9)',
   backdropFilter: 'blur(5px)',
   zIndex: 10,
+  height: '44px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
 });
 
 // Добавляем стиль для ссылки Terms of Service
