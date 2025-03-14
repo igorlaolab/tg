@@ -34,3 +34,10 @@ button {
   border: none;
   color: #fff;
 }
+
+.scrollable-element {
+  overflow-y: scroll;
+  height: 32rem;
+  font-size: 6.25rem;
+  border: 1px solid;
+}

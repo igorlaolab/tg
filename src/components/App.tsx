@@ -1,44 +1,32 @@
-import { miniApp, useSignal } from '@telegram-apps/sdk-react';
+import { useLaunchParams, miniApp, useSignal } from '@telegram-apps/sdk-react';
 import { AppRoot } from '@telegram-apps/telegram-ui';
 import { Navigate, Route, Routes, BrowserRouter } from 'react-router-dom';
-import { useEffect } from 'react'
+import {useEffect} from 'react'
 
 import { routes } from '@/navigation/routes.tsx';
-import { useLaunchParams } from '@/hooks/useLaunchParams';
-
-// Объявляем типы для Telegram WebApp
-declare global {
-  interface Window {
-    Telegram?: {
-      WebApp?: {
-        setupSwipeBehavior?: (params: { swipe_enabled: boolean }) => void;
-      };
-    };
-  }
-}
 
 export function App() {
   const lp = useLaunchParams();
   const isDark = useSignal(miniApp.isDark);
 
   useEffect(() => {
-    // В версии 3 API изменился, поэтому используем более безопасную проверку
-    try {
-      if (typeof window !== 'undefined' &&
-        window.Telegram &&
-        window.Telegram.WebApp &&
-        typeof window.Telegram.WebApp.setupSwipeBehavior === 'function') {
-        window.Telegram.WebApp.setupSwipeBehavior({ swipe_enabled: false });
-      }
-    } catch (error) {
-      console.error('Ошибка при настройке swipeBehavior:', error);
+    if (
+    // @ts-expect-error qwert
+      window.Telegram &&
+      // @ts-expect-error qwert
+      window.Telegram.WebApp &&
+      // @ts-expect-error qwert
+      typeof window.Telegram.WebApp.setupSwipeBehavior === 'function'
+    ) {
+      // @ts-expect-error qwert
+      window.Telegram.WebApp.setupSwipeBehavior({ swipe_enabled: false });
     }
   }, []);
 
   return (
     <AppRoot
       appearance={isDark ? 'dark' : 'light'}
-      platform={['macos', 'ios'].includes(lp.platform as string) ? 'ios' : 'base'}
+      platform={['macos', 'ios'].includes(lp.platform) ? 'ios' : 'base'}
     >
       <BrowserRouter>
         <Routes>

@@ -4,6 +4,7 @@ import {
   themeParams,
   miniApp,
   initData,
+  $debug,
   init as initSDK,
 } from '@telegram-apps/sdk-react';
 
@@ -11,6 +12,9 @@ import {
  * Initializes the application and configures its dependencies.
  */
 export function init(debug: boolean): void {
+  // Set @telegram-apps/sdk-react debug mode.
+  $debug.set(debug);
+
   // Initialize special event handlers for Telegram Desktop, Android, iOS, etc.
   // Also, configure the package.
   initSDK();

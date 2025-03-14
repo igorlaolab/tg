@@ -22,7 +22,7 @@ const StatLabel = styled(Typography)({
 const StatValue = styled(Typography)({
     fontFamily: 'Gilroy',
     color: '#ECC80C',
-    fontSize: '15px',
+    fontSize: '14px',
     fontWeight: 600,
 });
 
