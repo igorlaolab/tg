@@ -32,16 +32,16 @@ const LeaderboardRow = styled(Box)({
   fontSize: '14px',
   border: '1px solid rgba(28, 57, 101, 0.6)',
   borderRadius: '9px 8px 8px 9px',
-  height: '37px'
+  height: '36px'
 });
 
 const TraderNameWrapper = styled(Box)({
   display: 'flex',
   alignItems: 'center',
   backgroundColor: '#0e2d5a',
-  height: '-webkit-fill-available',
   borderRadius: '8px 0 0 8px',
   padding: '8px 12px',
+  height: '100%'
 });
 
 const LeaderboardHeader = styled(Box)({
