@@ -7,7 +7,7 @@ interface NotificationIconProps {
     count: number;
 }
 
-const StyledBadge = styled(Badge)(({ theme }) => ({
+const StyledBadge = styled(Badge)(() => ({
     '& .MuiBadge-badge': {
         right: -2,
         top: 2,
@@ -55,4 +55,4 @@ const NotificationIcon: React.FC<NotificationIconProps> = ({ count }) => {
     );
 };
 
-export default NotificationIcon; 
+export default NotificationIcon;

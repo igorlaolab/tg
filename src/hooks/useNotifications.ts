@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 
 export interface Notification {
     id: string;
@@ -107,4 +107,4 @@ export const useNotifications = () => {
         markAllAsRead,
         toggleLike
     };
-}; 
+};

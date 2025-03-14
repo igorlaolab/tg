@@ -4,7 +4,7 @@ import { Page } from '@/components/Page';
 import NotificationItem from '@/components/UI/NotificationItem/NotificationItem';
 import { useNotifications, Notification } from '@/hooks/useNotifications';
 
-const ClearAllButton = styled(Button)(({ theme }) => ({
+const ClearAllButton = styled(Button)(() => ({
     color: '#66B3FF',
     fontSize: '12px',
     padding: '4px 8px',
@@ -22,7 +22,7 @@ const StyledTabs = styled(Tabs)(({ theme }) => ({
     },
 }));
 
-const StyledTab = styled(Tab)(({ theme }) => ({
+const StyledTab = styled(Tab)(() => ({
     textTransform: 'none',
     color: '#67819B',
     fontSize: '14px',
@@ -102,7 +102,7 @@ export const Notifications: React.FC = () => {
         }
     }, [tabValue, notifications]);
 
-    const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
+    const handleTabChange = (_event: React.SyntheticEvent, newValue: number) => {
         setTabValue(newValue);
     };
 
@@ -154,4 +154,4 @@ export const Notifications: React.FC = () => {
             ))}
         </Page>
     );
-}; 
+};
