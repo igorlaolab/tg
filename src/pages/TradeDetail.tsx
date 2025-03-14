@@ -115,7 +115,7 @@ export const TradeDetail: React.FC = () => {
 
   return (
     <Page>
-      <Box sx={{ pb: 7 }}>
+      <Box sx={{ pb: 8 }}>
         <HeaderContainer>
           <CoinInfo>
             <Avatar

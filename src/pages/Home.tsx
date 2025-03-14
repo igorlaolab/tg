@@ -7,6 +7,8 @@ import PositionsBlock from '@/components/UI/PositionsBlock/PositionsBlock';
 import { Page } from '@/components/Page';
 import UserProfileCard from "@/components/UI/UserProfileCard/UserProfileCard.tsx";
 import { useUserPhoto } from '@/hooks/useUserPhoto';
+import NotificationIcon from '@/components/UI/NotificationIcon/NotificationIcon';
+import { useNotifications } from '@/hooks/useNotifications';
 
 const NewsItem = styled(Paper)(({ theme }) => ({
   display: 'grid',
@@ -36,6 +38,7 @@ const AiRateBox = styled(Box)<{ isBearish: boolean }>(({ isBearish }) => ({
 
 export const Home: React.FC = () => {
   const avatarUrl = useUserPhoto();
+  const { unreadCount } = useNotifications();
 
   const positions = [
     {
@@ -59,6 +62,11 @@ export const Home: React.FC = () => {
   return (
     <Page back={false}>
       <Box sx={{ position: 'relative' }}>
+        {/* Notification Icon */}
+        <Box sx={{ position: 'absolute', top: 0, right: 0, zIndex: 10 }}>
+          <NotificationIcon count={unreadCount} />
+        </Box>
+
         <Box sx={{ px: 1.5 }}>
           <UserProfileCard
             avatarUrl={avatarUrl}

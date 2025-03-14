@@ -12,6 +12,7 @@ import { TradeDetail } from '@/pages/TradeDetail';
 import { Me } from '@/pages/Me';
 import OrderCreate from '@/pages/OrderCreate';
 import { AnalyticsAdvicePage } from '@/pages/AnalyticsAdvicePage';
+import { Notifications } from '@/pages/Notifications';
 
 interface Route {
   path: string;
@@ -55,4 +56,5 @@ export const routes: Route[] = [
   { path: '/analytics/:symbol', Component: AnalyticsAdvicePage, title: 'Analytics Advice' },
   { path: '/leaderboard', Component: Leaderboard, title: 'Leaderboard' },
   { path: '/me', Component: Me, title: 'Profile page' },
+  { path: '/notifications', Component: Notifications, title: 'Notifications' },
 ];
