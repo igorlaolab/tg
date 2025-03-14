@@ -104,7 +104,6 @@ export const Trade: React.FC = () => {
 
   return (
     <Page back={false}>
-    <Box sx={{ p: 2, pb: '60px' }}>
       {/* Заголовки */}
       <HeaderRow>
         <Typography variant="h2">Symbols</Typography>
@@ -146,7 +145,6 @@ export const Trade: React.FC = () => {
       ))}
 
       <TermsOfService />
-    </Box>
     </Page>
   );
 };

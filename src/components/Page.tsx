@@ -35,7 +35,7 @@ export function Page({ children, back = true }: PropsWithChildren<{
   }, [back]);
 
   return(
-    <Box sx={{paddingBottom: '56px'}}>
+    <Box sx={{height: 'inherit', px: 2, pt: 2}}>
       {children}
       <StyledBottomNav
         value={location.pathname}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { Box, Typography, styled, Avatar } from '@mui/material';
 import TimeframeSelector from '@/components/UI/TimeframeSelector/TimeframeSelector';
 import Button from '@/components/UI/Button/Button';
@@ -75,6 +75,7 @@ const TradeButton = styled(Button)({
 export const TradeDetail: React.FC = () => {
   const { symbol } = useParams<{ symbol: string }>();
   const [timeframe, setTimeframe] = useState('4h');
+  const navigate = useNavigate();
 
   // Моковые данные
   const price = 195.96;
@@ -107,9 +108,14 @@ export const TradeDetail: React.FC = () => {
     }
   ];
 
+  // Функция для перехода на страницу создания ордера
+  const handleTradeClick = () => {
+    navigate(`/trade/${symbol}/order`);
+  };
+
   return (
     <Page>
-      <Box sx={{ p: 2, pb: '120px' }}>
+      <Box sx={{ pb: 1 }}>
         <HeaderContainer>
           <CoinInfo>
             <Avatar
@@ -129,7 +135,7 @@ export const TradeDetail: React.FC = () => {
           </PriceContainer>
         </HeaderContainer>
 
-        <ChartWrapper sx={{mb: 2}}>
+        <ChartWrapper sx={{ mb: 2 }}>
           <img src={chartImage} alt="Price chart" />
         </ChartWrapper>
 
@@ -141,7 +147,7 @@ export const TradeDetail: React.FC = () => {
           <PositionsBlock positions={positions} />
         </Box>
 
-        <TradeButton fullWidth>
+        <TradeButton fullWidth onClick={handleTradeClick}>
           Trade
         </TradeButton>
       </Box>

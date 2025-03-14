@@ -178,7 +178,6 @@ export const Leaderboard: React.FC = () => {
 
   return (
     <Page back={false}>
-      <Box sx={{ p: 2 }}>
         {/* Блок баланса и сезона */}
         <Box sx={{
           textAlign: 'center',
@@ -249,7 +248,6 @@ export const Leaderboard: React.FC = () => {
             </LeaderboardRow>
           ))}
         </Box>
-      </Box>
     </Page>
   );
 };

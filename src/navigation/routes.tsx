@@ -10,6 +10,7 @@ import { Leaderboard } from '@/pages/Leaderboard';
 import { Trade } from '@/pages/Trade';
 import { TradeDetail } from '@/pages/TradeDetail';
 import { Me } from '@/pages/Me';
+import OrderCreate from '@/pages/OrderCreate';
 
 interface Route {
   path: string;
@@ -49,6 +50,7 @@ export const routes: Route[] = [
   { path: '/', Component: Home, title: 'Homepage' },
   { path: '/trade', Component: Trade, title: 'Trade' },
   { path: '/trade/:symbol', Component: TradeDetail, title: 'Symbol Info' },
+  { path: '/trade/:symbol/order', Component: OrderCreate, title: 'Create Order' },
   { path: '/leaderboard', Component: Leaderboard, title: 'Leaderboard' },
   { path: '/me', Component: Me, title: 'Profile page' },
 ];

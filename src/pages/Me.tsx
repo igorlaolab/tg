@@ -120,8 +120,8 @@ export const Me: React.FC = () => {
 
   return (
     <Page back={false}>
-      <Box sx={{ p: 2, pb: '60px' }}>
-        <Box sx={{ px: 2 }}>
+      <Box sx={{ pb: '60px' }}>
+        <Box sx={{ px: 1.5 }}>
           {/* Профиль пользователя */}
           <UserProfileCard
             avatarUrl={avatarUrl}

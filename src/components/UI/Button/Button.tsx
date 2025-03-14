@@ -17,7 +17,9 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   | 'outlined'
   | 'negative'
   | 'light'
-  | 'transparent';
+  | 'transparent'
+  | 'success'
+  | 'error';
   size?: 'H40' | 'H36' | 'H32' | 'H28' | 'H22';
   startIcon?: ReactNode;
   endIcon?: ReactNode;
@@ -127,6 +129,44 @@ const ButtonBase = styled.button<ButtonProps>`
 
       &:disabled {
         background-color: rgba(255, 0, 116, 40%);
+        border-color: transparent;
+        color: #8faac5;
+        cursor: not-allowed;
+      }
+    `}
+
+  ${props =>
+    props.variant === 'error' &&
+    css`
+      background-color: #FF4D4F;
+      color: white;
+      border: 1px solid rgba(255, 77, 79, 40%);
+
+      &:hover {
+        background-color: #FF6A6C;
+      }
+
+      &:disabled {
+        background-color: rgba(255, 77, 79, 40%);
+        border-color: transparent;
+        color: #8faac5;
+        cursor: not-allowed;
+      }
+    `}
+
+  ${props =>
+    props.variant === 'success' &&
+    css`
+      background-color: #28B550;
+      color: white;
+      border: 1px solid rgba(40, 181, 80, 40%);
+
+      &:hover {
+        background-color: #30CC5C;
+      }
+
+      &:disabled {
+        background-color: rgba(40, 181, 80, 40%);
         border-color: transparent;
         color: #8faac5;
         cursor: not-allowed;
