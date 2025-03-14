@@ -24,15 +24,15 @@ const PersonIconContainer = styled(Box)({
 
 // Стили для таблицы лидеров
 const LeaderboardRow = styled(Box)({
-  display: 'grid',
-  gridTemplateColumns: '1fr 100px',
+  display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
   marginBottom: '8px',
   fontSize: '14px',
   border: '1px solid rgba(28, 57, 101, 0.6)',
   borderRadius: '9px 8px 8px 9px',
-  height: '36px'
+  height: '36px',
+  width: '100%'
 });
 
 const TraderNameWrapper = styled(Box)({
@@ -41,7 +41,8 @@ const TraderNameWrapper = styled(Box)({
   backgroundColor: '#0e2d5a',
   borderRadius: '8px 0 0 8px',
   padding: '8px 12px',
-  height: '100%'
+  height: '100%',
+  width: '70%'
 });
 
 const LeaderboardHeader = styled(Box)({
@@ -49,6 +50,7 @@ const LeaderboardHeader = styled(Box)({
   justifyContent: 'space-between',
   padding: '0 16px',
   marginBottom: '8px',
+  width: '100%'
 });
 
 const LeaderValue = styled(Typography)({
@@ -57,7 +59,7 @@ const LeaderValue = styled(Typography)({
   fontSize: '14px',
   padding: '8px 12px',
   textAlign: 'center',
-  flex: 1,
+  width: '30%'
 });
 
 export const Leaderboard: React.FC = () => {
@@ -167,78 +169,78 @@ export const Leaderboard: React.FC = () => {
 
   return (
     <Page back={false}>
-    <Box sx={{ p: 2 }}>
-      {/* Блок баланса и сезона */}
-      <Box sx={{
-        textAlign: 'center',
-        backgroundColor: 'rgba(11, 24, 45, 0.6)',
-        borderRadius: '10px',
-        mb: 2
-      }}>
-        <Typography variant="h2" sx={{ mb: 1, color: '#FFFFFF' }}>
-          {getPageTitle.title}
-        </Typography>
-        <Typography variant="h4" sx={{
-          mb: 2,
-          color: getValueColor,
-          fontSize: '24px',
-          fontFamily: 'Gilroy'
+      <Box sx={{ p: 2 }}>
+        {/* Блок баланса и сезона */}
+        <Box sx={{
+          textAlign: 'center',
+          backgroundColor: 'rgba(11, 24, 45, 0.6)',
+          borderRadius: '10px',
+          mb: 2
         }}>
-          {getPageTitle.value}
-        </Typography>
-        <SeasonBadge>
-          <Typography variant="body2" sx={{ color: '#FFFFFF' }}>
-            Season 23: 1d 8h 24m left
+          <Typography variant="h2" sx={{ mb: 1, color: '#FFFFFF' }}>
+            {getPageTitle.title}
           </Typography>
-        </SeasonBadge>
-      </Box>
-      <Box sx={{ px: 3.5, mt: 2 }}>
-        <Segmented segments={[
-          {
-            label: 'Top Traders',
-            value: 'traders'
-          },
-          {
-            label: 'Top Referrals',
-            value: 'referrals'
-          },
-          {
-            label: 'Top Winrate',
-            value: 'winrate'
-          },
-        ]} activeValue={activeTab} onChange={setActiveTab} />
-      </Box>
+          <Typography variant="h4" sx={{
+            mb: 2,
+            color: getValueColor,
+            fontSize: '24px',
+            fontFamily: 'Gilroy'
+          }}>
+            {getPageTitle.value}
+          </Typography>
+          <SeasonBadge>
+            <Typography variant="body2" sx={{ color: '#FFFFFF' }}>
+              Season 23: 1d 8h 24m left
+            </Typography>
+          </SeasonBadge>
+        </Box>
+        <Box sx={{ px: 3.5, mt: 2 }}>
+          <Segmented segments={[
+            {
+              label: 'Top Traders',
+              value: 'traders'
+            },
+            {
+              label: 'Top Referrals',
+              value: 'referrals'
+            },
+            {
+              label: 'Top Winrate',
+              value: 'winrate'
+            },
+          ]} activeValue={activeTab} onChange={setActiveTab} />
+        </Box>
 
-      {/* Таблица лидеров */}
-      <Box sx={{ mt: 2 }}>
-        <LeaderboardHeader>
-          <Typography variant="subtitle1">
-            Trader
-          </Typography>
-          <Typography variant="subtitle1">
-            {rightColumnTitle}
-          </Typography>
-        </LeaderboardHeader>
+        {/* Таблица лидеров */}
+        <Box sx={{ mt: 2 }}>
+          <LeaderboardHeader>
+            <Typography variant="subtitle1">
+              Trader
+            </Typography>
+            <Typography variant="subtitle1">
+              {rightColumnTitle}
+            </Typography>
+          </LeaderboardHeader>
 
-        {activeData.map((item, index) => (
-          <LeaderboardRow key={index}>
-            <TraderNameWrapper>
-              {activeTab === 'referrals' && (
-                <PersonIconContainer>
-                  <LuUsersRound />
-                </PersonIconContainer>
-              )}
-              <Typography variant="h2" sx={{ color: '#FFFFFF' }}>
-                {item.name}
-              </Typography>
-            </TraderNameWrapper>
-            <LeaderValue sx={{ color: getValueColor }}>
-              {item.value}
-            </LeaderValue>
-          </LeaderboardRow>
-        ))}
+          {activeData.map((item, index) => (
+            <LeaderboardRow key={index}>
+              <TraderNameWrapper>
+                {activeTab === 'referrals' && (
+                  <PersonIconContainer>
+                    <LuUsersRound />
+                  </PersonIconContainer>
+                )}
+                <Typography variant="h2" sx={{ color: '#FFFFFF' }}>
+                  {item.name}
+                </Typography>
+              </TraderNameWrapper>
+              <LeaderValue sx={{ color: getValueColor }}>
+                {item.value}
+              </LeaderValue>
+            </LeaderboardRow>
+          ))}
+        </Box>
       </Box>
-    </Box>
     </Page>
   );
 };
