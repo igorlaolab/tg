@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Typography, styled } from '@mui/material';
+import OrderModal from '../Modal/OrderModal';
 
 const PositionItem = styled(Box)({
     display: 'flex',
@@ -73,6 +74,10 @@ interface PositionsBlockProps {
 }
 
 const PositionsBlock: React.FC<PositionsBlockProps> = ({ positions }) => {
+    // State for modal
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
+
     // Функция для форматирования цены
     const formatPrice = (price: number): string => {
         return new Intl.NumberFormat('en-US', {
@@ -80,6 +85,17 @@ const PositionsBlock: React.FC<PositionsBlockProps> = ({ positions }) => {
             currency: 'USD',
             maximumFractionDigits: 2,
         }).format(price);
+    };
+
+    // Handle position click
+    const handlePositionClick = (position: Position) => {
+        setSelectedPosition(position);
+        setIsModalOpen(true);
+    };
+
+    // Handle close modal
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
     };
 
     return (
@@ -91,7 +107,11 @@ const PositionsBlock: React.FC<PositionsBlockProps> = ({ positions }) => {
 
             {positions.length > 0 ? (
                 positions.map((position, index) => (
-                    <PositionItem key={index}>
+                    <PositionItem
+                        key={index}
+                        onClick={() => handlePositionClick(position)}
+                        sx={{ cursor: 'pointer' }}
+                    >
                         <PositionDetails>
                             <Box>
                                 <CurrencyText>{position.symbol}</CurrencyText>
@@ -117,6 +137,20 @@ const PositionsBlock: React.FC<PositionsBlockProps> = ({ positions }) => {
                 <Typography variant="body2" sx={{ color: '#67819B', textAlign: 'center' }}>
                     No open positions
                 </Typography>
+            )}
+
+            {/* Order Modal */}
+            {selectedPosition && (
+                <OrderModal
+                    isOpen={isModalOpen}
+                    onClose={handleCloseModal}
+                    symbol={selectedPosition.symbol}
+                    orderType="Market"
+                    tradeType="buy"
+                    price={selectedPosition.entryPrice.toString()}
+                    amount="1.0"
+                    timeframe="1h"
+                />
             )}
         </>
     );
