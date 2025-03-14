@@ -157,7 +157,7 @@ export const OrderCreate: React.FC = () => {
         </ContentContainer>
 
         {/* Submit Button at bottom */}
-        <Box mb={1}>
+        <Box mb={1} sx={{marginTop: 'auto'}}>
           <Button
             fullWidth
             variant={tradeType === 'buy' ? 'success' : 'error'}
