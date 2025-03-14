@@ -1,7 +1,7 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { Box, Typography, styled, Avatar, Divider } from '@mui/material';
-import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
+import { FaArrowLeft, FaArrowUp, FaArrowDown } from 'react-icons/fa';
 import { Page } from '@/components/Page';
 
 const AdviceCard = styled(Box)({
@@ -180,7 +180,7 @@ export const AnalyticsAdvicePage: React.FC = () => {
     return (
         <Page>
             <Box>
-                <Typography variant="h2" sx={{ mb: 1 }}>AI Analytics Advice</Typography>
+                <Typography variant="h2" sx={{ mb: 1, mt: 2 }}>AI Analytics Advice</Typography>
                 {filteredAdvices.map((advice, index) => (
                     <AdviceCard key={index}>
                         <AdviceHeader>
