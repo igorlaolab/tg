@@ -60,7 +60,7 @@ const ActiveSegment = styled.div<{
   size: 'default' | 'small';
 }>`
   position: absolute;
-  top: ${({ size }) => (size === 'small' ? '4px' : '4px')};
+  top: ${({ size }) => (size === 'small' ? '4px' : '5px')};
   left: ${({ left }) => `${left}px`};
   width: ${({ width }) => `${width}px`};
   height: ${({ size }) => (size === 'small' ? '20px' : 'calc(100% - 10px)')};
