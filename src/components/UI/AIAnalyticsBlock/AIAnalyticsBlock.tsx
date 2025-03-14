@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Typography, styled } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import AIAnalytics from '@/components/UI/AIAnalytics/AIAnalytics';
 
 const ShowMore = styled(Typography)({
@@ -17,14 +18,21 @@ interface AIAnalyticsBlockProps {
         indicators: number;
         total: number;
     };
+    symbol?: string;
 }
 
-const AIAnalyticsBlock: React.FC<AIAnalyticsBlockProps> = ({ metrics }) => {
+const AIAnalyticsBlock: React.FC<AIAnalyticsBlockProps> = ({ metrics, symbol }) => {
+    const navigate = useNavigate();
+
+    const handleShowMoreClick = () => {
+        navigate(`/analytics/${symbol || 'all'}`);
+    };
+
     return (
         <>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1 }}>
                 <Typography variant="subtitle1">AI Analytics</Typography>
-                <ShowMore>Show more</ShowMore>
+                <ShowMore onClick={handleShowMoreClick}>Show more</ShowMore>
             </Box>
             <AIAnalytics metrics={metrics} />
         </>

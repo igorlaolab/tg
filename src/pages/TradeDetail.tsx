@@ -141,7 +141,7 @@ export const TradeDetail: React.FC = () => {
 
         <TimeframeSelector value={timeframe} onChange={setTimeframe} />
 
-        <AIAnalyticsBlock metrics={aiMetrics} />
+        <AIAnalyticsBlock metrics={aiMetrics} symbol={symbol} />
 
         <Box sx={{ mt: 3 }}>
           <PositionsBlock positions={positions} />

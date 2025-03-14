@@ -7,6 +7,7 @@ import Input from '@/components/UI/Input/Input';
 import Button from '@/components/UI/Button/Button';
 import Range from '@/components/UI/Range/Range';
 import Dropdown from '@/components/UI/Dropdown/Dropdown';
+import OrderModal from '@/components/UI/Modal/OrderModal';
 
 const TotalContainer = styled(Box)({
   display: 'flex',
@@ -41,6 +42,7 @@ export const OrderCreate: React.FC = () => {
   const [price, setPrice] = useState<string>('');
   const [sliderValue, setSliderValue] = useState<number>(20);
   const [timeframe, setTimeframe] = useState<string>('2h');
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   // Mock data
   const lastPrice = 103967.00;
@@ -73,6 +75,16 @@ export const OrderCreate: React.FC = () => {
   // Обработчик для выбора временного промежутка
   const handleTimeframeChange = (selectedTimeframe: string) => {
     setTimeframe(selectedTimeframe);
+  };
+
+  // Обработчик для открытия модального окна
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  // Обработчик для закрытия модального окна
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -161,12 +173,24 @@ export const OrderCreate: React.FC = () => {
           <Button
             fullWidth
             variant={tradeType === 'buy' ? 'success' : 'error'}
-            onClick={() => console.log(`Order placed: ${orderType} ${tradeType} ${amount} ${symbol} at ${orderType === 'limit' ? price : 'market'} for ${timeframe}`)}
+            onClick={handleOpenModal}
           >
             {tradeType === 'buy' ? `Buy ${symbol?.toUpperCase()}` : `Sell ${symbol?.toUpperCase()}`}
           </Button>
         </Box>
       </Stack>
+
+      {/* Order Modal */}
+      <OrderModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        symbol={symbol || 'BTC'}
+        orderType={orderType}
+        tradeType={tradeType}
+        price={price || lastPrice.toString()}
+        amount={amount}
+        timeframe={timeframe}
+      />
     </Page>
   );
 };
