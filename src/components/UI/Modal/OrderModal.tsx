@@ -106,7 +106,11 @@ export const OrderModal: React.FC<OrderModalProps> = ({
     timeframe,
 }) => {
     if (!isOpen) return null;
-
+  console.log(    orderType,
+    tradeType,
+    price,
+    amount,
+    timeframe,)
     // Mock data
     const currentPrice = 195.96;
     const priceChange = -5.21;
@@ -200,4 +204,4 @@ export const OrderModal: React.FC<OrderModalProps> = ({
     );
 };
 
-export default OrderModal; 
+export default OrderModal;
