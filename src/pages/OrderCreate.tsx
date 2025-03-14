@@ -77,7 +77,7 @@ export const OrderCreate: React.FC = () => {
 
   return (
     <Page>
-      <Stack justifyContent="space-between" sx={{backgroundColor: 'red'}}>
+      <Stack justifyContent="space-between" sx={{ backgroundColor: 'red', height: 'inherit' }}>
         <ContentContainer sx={{ mt: 3 }}>
           <Segmented
             segments={[
@@ -157,7 +157,7 @@ export const OrderCreate: React.FC = () => {
         </ContentContainer>
 
         {/* Submit Button at bottom */}
-        <Box mb={1} sx={{marginTop: 'auto'}}>
+        <Box mb={1} sx={{ marginTop: 'auto' }}>
           <Button
             fullWidth
             variant={tradeType === 'buy' ? 'success' : 'error'}
