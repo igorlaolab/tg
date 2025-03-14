@@ -26,13 +26,14 @@ const PersonIconContainer = styled(Box)({
 const LeaderboardRow = styled(Box)({
   display: 'flex',
   justifyContent: 'space-between',
-  alignItems: 'center',
+  alignItems: 'stretch',
   marginBottom: '8px',
   fontSize: '14px',
   border: '1px solid rgba(28, 57, 101, 0.6)',
   borderRadius: '9px 8px 8px 9px',
   height: '36px',
-  width: '100%'
+  width: '100%',
+  overflow: 'hidden'
 });
 
 const TraderNameWrapper = styled(Box)({
@@ -41,8 +42,10 @@ const TraderNameWrapper = styled(Box)({
   backgroundColor: '#0e2d5a',
   borderRadius: '8px 0 0 8px',
   padding: '8px 12px',
-  height: '100%',
-  width: '70%'
+  height: 'auto',
+  minHeight: '100%',
+  width: '70%',
+  boxSizing: 'border-box'
 });
 
 const LeaderboardHeader = styled(Box)({
@@ -59,7 +62,13 @@ const LeaderValue = styled(Typography)({
   fontSize: '14px',
   padding: '8px 12px',
   textAlign: 'center',
-  width: '30%'
+  width: '30%',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: 'auto',
+  minHeight: '100%',
+  boxSizing: 'border-box'
 });
 
 export const Leaderboard: React.FC = () => {
