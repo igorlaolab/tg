@@ -35,7 +35,7 @@ export function Page({ children, back = true }: PropsWithChildren<{
   }, [back]);
 
   return(
-    <Box sx={{height: 'inherit', px: 2, pt: 2}}>
+    <Box sx={{height: 'inherit', px: 2, pt: 2, display: 'flex', flexDirection: 'column'}}>
       {children}
       <StyledBottomNav
         value={location.pathname}
