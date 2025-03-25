@@ -13,6 +13,7 @@ import './styles/fonts.css'
 // Mock the environment in case, we are outside Telegram.
 import './mockEnv.ts';
 import {theme} from "@/theme";
+import '@telegram-apps/telegram-ui/dist/styles.css';
 const root = ReactDOM.createRoot(document.getElementById('root')!);
 
 try {
