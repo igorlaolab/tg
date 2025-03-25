@@ -3,7 +3,7 @@ import { backButton } from '@telegram-apps/sdk-react';
 import { PropsWithChildren, useEffect } from 'react';
 import {BottomNavigationAction, BottomNavigation, styled, Box} from "@mui/material";
 import { BiHomeAlt2 } from "react-icons/bi";
-import { TbCoinBitcoin, TbUserBitcoin } from "react-icons/tb";
+import { TbCoinBitcoin, TbUserBitcoin, TbWallet } from "react-icons/tb";
 import { LuRocket } from "react-icons/lu";
 
 const StyledBottomNav = styled(BottomNavigation)({
@@ -60,6 +60,11 @@ export function Page({ children, back = true }: PropsWithChildren<{
           label="Me"
           value="/me"
           icon={<TbUserBitcoin />}
+        />
+        <BottomNavigationAction
+          label="Wallet"
+          value="/ton-connect"
+          icon={<TbWallet />}
         />
       </StyledBottomNav>
     </Box>);
