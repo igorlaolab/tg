@@ -59,7 +59,7 @@ export const TONConnectPage: FC = () => {
             <Section>
               <Cell
                 before={
-                  <Avatar src={wallet.imageUrl} alt="Provider logo" width={60} height={60}/>
+                  <Avatar src={wallet.imageUrl} alt="Provider logo" width={20} height={20}/>
                 }
                 after={<Navigation>About wallet</Navigation>}
                 subtitle={wallet.appName}
