@@ -3,7 +3,6 @@ import {
   Avatar,
   Cell,
   List,
-  Navigation,
   Placeholder,
   Section,
   Text,
@@ -60,7 +59,6 @@ export const TONConnectPage: FC = () => {
                 before={
                   <Avatar src={wallet.imageUrl} alt="Provider logo" width={20} height={20}/>
                 }
-                after={<Navigation>About wallet</Navigation>}
                 subtitle={wallet.appName}
               >
                 <Title level="3">{wallet.name}</Title>
