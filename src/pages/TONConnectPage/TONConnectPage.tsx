@@ -1,4 +1,3 @@
-import { openLink } from '@telegram-apps/sdk-react';
 import { TonConnectButton, useTonWallet } from '@tonconnect/ui-react';
 import {
   Avatar,
@@ -63,10 +62,6 @@ export const TONConnectPage: FC = () => {
                 }
                 after={<Navigation>About wallet</Navigation>}
                 subtitle={wallet.appName}
-                onClick={(e) => {
-                  e.preventDefault();
-                  openLink(wallet.aboutUrl);
-                }}
               >
                 <Title level="3">{wallet.name}</Title>
               </Cell>
